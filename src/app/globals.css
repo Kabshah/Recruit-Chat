@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base: #f9f5f0;
+  --color-accent: #ff6f3c; /* Orange */
+  --color-accent-hover: #ff8a5c;
+  --color-brand: #004b93; /* The primary blue used for text and the background circle */
+  --color-neutral: #f4f3ef;
+  --color-surface: #ffffff;
+  --color-surface-light: #f0ebe4;
+  --color-text-primary: #004b93;
+  --color-text-secondary: #4a657e;
+  
+  --font-display: var(--font-outfit), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+@layer base {
+  html, body {
+    @apply bg-base text-text-primary font-sans antialiased selection:bg-accent selection:text-white;
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Base resets & utilities */
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* Forcefully completely hide the Next.js Development Indicator */
+nextjs-portal, #nextjs-route-announcer, [data-nextjs-toast] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-base); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-light); 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a404c; 
+}
